@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mod2style.css">
+    <title> Best Out of waste Craft Videos </title>
+</head>
+<body oncontextmenu="return false">
+    <div class="container">
+        <h1> Best Out of waste Craft Videos </h1>
+        <div id="video_player">
+            <video controls poster="" class="video" id="video">
+                <source src="videos/Bird Feeder craft.mp4" type="video/mp4">
+                <source src="videos/Bird Feeder craft.mp4" type="video/mp4">
+            </video>
+            <div class="scrollBox">
+                <div class="box">
+                    <img src="calendar.png">
+                    <div class="box-content">
+                        <h3> Calendar Craft </h3>
+                        <a href="videos/calendar craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Desk Organizer.png">
+                    <div class="box-content">
+                        <h3> Desk Organizer Craft</h3>
+                        <a href="videos/Desk Organizer craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Dustbin.png">
+                    <div class="box-content">
+                        <h3> DustBin Craft</h3>
+                        <a href="videos/DustBin Craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Frame.png">
+                    <div class="box-content">
+                        <h3>Old Frame Craft</h3>
+                        <a href="videos/frame craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Glass.png">
+                    <div class="box-content">
+                        <h3> Plasti Glass Craft</h3>
+                        <a href="videos/glass craft.mp4"class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Hanging wall.png">
+                    <div class="box-content">
+                        <h3>Hanging Wall Craft </h3>
+                        <a href="videos/Hanging Wall Craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Pencil Box.png">
+                    <div class="box-content">
+                        <h3>Pencil Box craft </h3>
+                        <a href="videos/pencil box craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Bangle.png">
+                    <div class="box-content">
+                        <h3>Bangle Craft </h3>
+                        <a href="videos/Bangle craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Quiling Art.png">
+                    <div class="box-content">
+                        <h3> Quilling paper Art </h3>
+                        <a href="videos/Quilling Art.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Pencil Box.png">
+                    <div class="box-content">
+                        <h3>Phone Box Craft </h3>
+                        <a href="videos/Phone Box Craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Wall.png">
+                    <div class="box-content">
+                        <h3> Wall Craft </h3>
+                        <a href="videos/Wall craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/calendar.png">
+                    <div class="box-content">
+                        <h3> Wall Craft </h3>
+                        <a href="videos/calendar craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="Images/Bird Feeder.png">
+                    <div class="box-content">
+                        <h3> Wall Craft </h3>
+                        <a href="videos/Bird Feeder craft.mp4" class="btn">Watch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ###########################javascript for vidoe Player################ -->
+
+    <script type="text/javascript">
+        let anchors = document.querySelectorAll('div .btn');
+    let links = [...anchors];
+    
+    for (let i=0; i<links.length; i++) {
+        links[i].onclick = handler;
+    }
+    function handler(e) {
+        e.preventDefault();
+        let videotarget = this.getAttribute("href");
+        let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+        let video = document.getElementById("video");
+        video.removeAttribute("poster");
+        let source = document.querySelectorAll("#video_player video source");
+        source[0].src = filename + ".mp4";
+        // source[1].src = filename + ".m4v";
+        video.load();
+        video.play();
+    }
+    </script>
+</body>
+</html>
